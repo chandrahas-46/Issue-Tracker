@@ -10,8 +10,9 @@ $ **`Home Page`** $
 $ **`Project Detail Page`** $
   - When the user clicks on a project (in home page) redirect the user to this page which will show bugs related to this project
   - User should be able to perform following actions on this page
-    Filter by multiple labels i.e. I should be able to filter by 2 or more labels at the same time
-    Filter by author
-    Search by title and description
+    <br>
+    1. Filter by multiple labels i.e. I should be able to filter by 2 or more labels at the same time<br>
+    2. Filter by author<br>
+    3. Search by title and description
   - A button to create an issue
 
