@@ -1,11 +1,9 @@
-
-  
   <body>
     <!-- Your HTML code here -->
     <div class="mb-5 p-5">
       <% for( let project of projects ) { %>
-        <div class="card mb-2 w-50 m-auto" id="card">
-          <div class="card-header bg-danger">
+        <div class="card mb-2 m-auto" id="card">
+          <div class="card-header bg-primary">
             <strong> Name of the project : </strong>
             <%= project.name %>
           </div>
@@ -21,6 +19,7 @@
   
             <div class="m-auto text-start">
               <a href="/project/<%=project._id%>" class="btn btn-warning m-auto">Open project</a>
+              <a href="project/delete/<%= project._id%>" class="btn btn-danger m-auto">Delete project</a>
             </div>
           </div>
         </div>
