@@ -75,10 +75,23 @@ export default class CSVController{
               return res.redirect('back');
             }
         } 
-            catch(err){
-                console.error(err);
-                res.status(500).send('Internal server error.');
+        catch(err){
+            console.error(err);
+            res.status(500).send('Internal server error.');
+        }
+    }
+
+    // delete Project
+    async deleteProject(req, res){
+        let projectDetails = await projectModel.findById(req.params.id);
+        if (projectDetails) {
+            for(let i=0; i<projectDetails.issues.length; i++){
+                let issueId = projectDetails.issues[i]._id;
+                await issueModel.findByIdAndDelete(issueId);
             }
+        } 
+        await projectModel.findByIdAndDelete(req.params.id);
+        return res.redirect(`back`);
     }
 
 }
